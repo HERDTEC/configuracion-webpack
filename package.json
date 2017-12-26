@@ -1,0 +1,16 @@
+{
+  "name": "Curso-Webpack",
+  "version": "1.0.0",
+  "description": "Curso de Webpack",
+  "main": "index.js",
+  "author": "@PaulCuichan",
+  "license": "MIT",
+  "scripts":{
+    "webpack": "webpack index.js bundle.js",
+    "build:wc": "webpack",
+    "build:wcext": "webpack --config ./external/webpack.config.js"
+  }, 
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
+}
