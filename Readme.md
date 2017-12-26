@@ -80,4 +80,19 @@ output: {
 #### **Loaders**
 
 * Loaders para css
+1. Instalar loaders
+`yarn add style-loader css-loader -D`
+2. Colocar en una regla el tipo de archivo y el loader que tiene que procesarlo
 
+```` js
+ module: {
+    rules: {
+        // Aqui van los loaders
+      // test: que tipo de archivo quiero reconocer,
+      // use: que loader se va a encargar del archivo
+       test: /\.css$/,
+       use:['style-loader', 'css-loader']
+    }
+  }
+````
+> se hace uso de los loader sin necesidad de importar las librerias con require o import

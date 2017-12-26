@@ -5,12 +5,15 @@
   "main": "index.js",
   "author": "@PaulCuichan",
   "license": "MIT",
-  "scripts":{
+  "scripts": {
     "webpack": "webpack index.js bundle.js",
     "build:wc": "webpack",
-    "build:wcext": "webpack --config ./external/webpack.config.js"
-  }, 
+    "build:wcext": "webpack --config ./external/webpack.config.js",
+    "build:css": "webpack --config ./css-style-loader/webpack.config.js"
+  },
   "devDependencies": {
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.19.1",
     "webpack": "^3.10.0"
   }
 }
