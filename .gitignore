@@ -1,5 +1,4 @@
-./external
-external
+./external/dist/bundle.js
 conf
 ./conf
 ./bundle.js
