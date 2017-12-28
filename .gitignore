@@ -3,3 +3,4 @@ conf
 ./conf
 ./bundle.js
 bundle.js
+./node_modules

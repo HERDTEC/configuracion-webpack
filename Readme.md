@@ -81,7 +81,8 @@ output: {
 
 * Loaders para css
 1. Instalar loaders
-`yarn add style-loader css-loader -D`
+
+`yarn add style-loader css-loader -D`: Loaders para css
 2. Colocar en una regla el tipo de archivo y el loader que tiene que procesarlo
 
 ```` js
@@ -96,3 +97,44 @@ output: {
   }
 ````
 > se hace uso de los loader sin necesidad de importar las librerias con require o import
+
+#### **Plugins**
+
+1. Instalar plugins
+
+`yarn add extract-text-webpack-plugin -D`
+
+2. `Importar plugin y declararlo en la seccion de plugins`
+
+````js
+  plugins:[
+    // Detallar los plugins, se debe importar
+    /**
+     * Para que los archivos css sean procesados individualmente y tengan el mismo nombre que los archivos del entry point
+     *  new ExtTextPlugin("css/[name].css")
+     */
+    new ExtTextPlugin("css/styles.css")
+  ]
+````
+3. Usar el plugin en un loader.
+
+````js
+module: {
+    rules: [
+      {
+        /*******
+         *  Aqui van los loaders
+          test: que tipo de archivo quiero reconocer,
+          use: que loader se va a encargar del archivo
+        */
+        test: /\.css$/,
+        use: ExtTextPlugin.extract({
+            //['style-loader', 'css-loader']
+            fallback: 'style-loader',
+            use: "css-loader"
+        })
+      }
+    ]
+  },
+````
+

@@ -9,10 +9,12 @@
     "webpack": "webpack index.js bundle.js",
     "build:wc": "webpack",
     "build:wcext": "webpack --config ./external/webpack.config.js",
-    "build:css": "webpack --config ./css-style-loader/webpack.config.js"
+    "build:css": "webpack --config ./css-style-loader/webpack.config.js",
+    "build:ext:css": "webpack --config ./plugin-extract-text/webpack.config.js"
   },
   "devDependencies": {
     "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0"
   }
