@@ -137,4 +137,19 @@ module: {
     ]
   },
 ````
+### Multiples Entry Points
+1. En el bloque entry: listar las entradas js
+2. En el bloque output.filename, ubicar `[name].js` 
+````js
+  entry: {
+    index: path.resolve(__dirname, './src/js/index.js'),
+    contacto: path.resolve(__dirname, './src/js/contacto.js'),
+    precio: path.resolve(__dirname, './src/js/precio.js')
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/[name].js'
+  },
+````
+
 
