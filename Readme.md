@@ -158,11 +158,33 @@ module: {
 ````js
  "build:dev": "webpack-dev-server --config ./web-server/webpack.config.js"
 ````
-3. En el archivo webpack.config, definir el bloque `devServer`, para configurar el servidor.
+3. En el archivo webpack.config, definir el bloque `devServer`, para [configurar el servidor](https://webpack.js.org/configuration/dev-server/).
 ````js
-devServer:{
-   port: 9000,
-}
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 8080
+  },
+````
+
+### Soporte EM6
+1. Instalar loader de babel
+
+
+`yarn add babel-loader babel-core babel-preset-es2015 babel-preset-es2016 babel-preset-es2017 -D`
+
+2. Definir una nueva rule en el bloque de rules.
+````js
+//loader para babel
+      {
+        test: /\.js$/,
+        use:{
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015','es2016', 'es2017']
+          }
+        }
+      }
 ````
 
 
