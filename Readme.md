@@ -151,5 +151,20 @@ module: {
     filename: 'js/[name].js'
   },
 ````
+###  SERVER CON REFRESH
+1. Instalar el webpack dev server
+`yarn add webpack-dev-server -D`
+2. En lugar del comando webpack usar el comando `webpack-dev-server`.
+````js
+ "build:dev": "webpack-dev-server --config ./web-server/webpack.config.js"
+````
+3. En el archivo webpack.config, definir el bloque `devServer`, para configurar el servidor.
+````js
+devServer:{
+   port: 9000,
+}
+````
+
+
 
 
